@@ -7,7 +7,11 @@ const Home = () => {
     <div>
       <Navbar />
       <div className="">
-        <img src={hero_banner} alt="hero-banner" className="w-full " />
+        <img
+          src={hero_banner}
+          alt="hero-banner"
+          className="w-full h-full"
+        />
         <div>
           <img src={hero_title} alt="caption image" className="" />
           <p>
