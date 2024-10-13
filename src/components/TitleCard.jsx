@@ -1,19 +1,38 @@
-import React from 'react'
-import cards_data from "../assets/cards/Cards_data"
+import cards_data from "../assets/cards/Cards_data";
+import { useEffect } from "react";
+import React, { useRef } from "react";
 
 const TitleCard = () => {
-  return (
-    <div>
-<h2>Popular on Netflix</h2>
-<div>
-  {cards_data.map((card,index)=>{
-    return <div key={index}>
-<img src={card.image} alt="movie-image" />
-<h3>{card.name}</h3>
-    </div>  })}
-</div>
-    </div>
-  )
-}
+  
+  const cardsRef = useRef();
 
-export default TitleCard
+  const handleWheel = (event) => {
+    event.preventDefault();
+    cardsRef.current.scrollLeft += event.deltaY;
+  };
+  useEffect(() => {
+    cardsRef.current.addEventListener("wheel", handleWheel);
+  }, []);
+
+  return (
+    <div className="mt-2 mb-0">
+      <h2 className="mb-3">Popular on Netflix</h2>
+      <div className="flex gap-4" ref={cardsRef}>
+        {cards_data.map((card, index) => {
+          return (
+            <div key={index} className="relative w-60">
+              <img
+                src={card.image}
+                alt="movie-image"
+                className="rounded-md cursor-pointer"
+              />
+              <p className="absolute bottom-1 right-3">{card.name}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default TitleCard;

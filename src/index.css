@@ -9,3 +9,8 @@ body {
   color: aliceblue;
   font-family: "title";
 }
+.no-scrollbar{
+  @layer webkit-scrollbar{
+    display: none;
+  }
+}
