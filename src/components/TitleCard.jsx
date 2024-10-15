@@ -1,32 +1,20 @@
 import cards_data from "../assets/cards/Cards_data";
-import { useEffect } from "react";
-import React, { useRef } from "react";
 
-const TitleCard = () => {
-  
-  const cardsRef = useRef();
-
-  const handleWheel = (event) => {
-    event.preventDefault();
-    cardsRef.current.scrollLeft += event.deltaY;
-  };
-  useEffect(() => {
-    cardsRef.current.addEventListener("wheel", handleWheel);
-  }, []);
-
+const TitleCard = ({ title, category }) => {
   return (
-    <div className="mt-2 mb-0">
-      <h2 className="mb-3">Popular on Netflix</h2>
-      <div className="flex gap-4" ref={cardsRef}>
+    <div className="mt-4 ">
+      <h2 className="px-2 mb-1 ml-2 text-xl font-bold">{title ? title : "Popular on Netflix"}</h2>
+      <div className="sm:w-auto sm:overflow-hidden sm:flex">
         {cards_data.map((card, index) => {
           return (
-            <div key={index} className="relative w-60">
+            <div className="relative" key={index}>
               <img
                 src={card.image}
                 alt="movie-image"
-                className="rounded-md cursor-pointer"
+                // card size
+                className="px-4 pb-6 cursor-pointer"
               />
-              <p className="absolute bottom-1 right-3">{card.name}</p>
+              <p className="absolute bottom-6 right-7">{card.name}</p>
             </div>
           );
         })}

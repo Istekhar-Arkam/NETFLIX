@@ -17,7 +17,7 @@ const Navbar = () => {
   };
   return (
     <div className="fixed flex items-center gap-3 px-5 py-4">
-      <div className="flex items-center">
+      <div className="flex items-center ">
         <div className="ml-3 ">
           <img src={logo} alt="logo" className="h-9" />
         </div>
@@ -35,7 +35,7 @@ const Navbar = () => {
         <p>Children</p>
         <img src={bell_icon} alt="bell-icon" />
       </div>
-      <div className="fixed flex items-center gap-2 cursor-pointer right-5">
+      <div className="fixed flex items-center gap-2 cursor-pointer right-4">
         <img
           src={profile_img}
           alt="profile-icon"
