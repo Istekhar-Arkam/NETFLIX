@@ -2,19 +2,21 @@ import cards_data from "../assets/cards/Cards_data";
 
 const TitleCard = ({ title, category }) => {
   return (
-    <div className="mt-4 ">
-      <h2 className="px-2 mb-1 ml-2 text-xl font-bold sm:ml-8">{title ? title : "Popular on Netflix"}</h2>
-      <div className="border-2 border-white sm:flex sm:ml-10 ">
+    <div className="mt-4 sm:w-full">
+      <h2 className="px-2 ml-1 text-xl font-bold capitalize sm:ml-16">
+        {title ? title : "Popular on Netflix"}
+      </h2>
+      <div className="py-2 sm:gap-4 sm:flex sm:flex-wrap sm:ml-16 sm:mr-10">
         {cards_data.map((card, index) => {
           return (
-            <div className="relative" key={index}>
+            <div className="relative w-fit" key={index}>
               <img
                 src={card.image}
                 alt="movie-image"
                 // card size
-                className="px-3 pb-4 cursor-pointer"
+                className="px-3 pb-4 cursor-pointer w-80"
               />
-              <p className="absolute bottom-6 right-7">{card.name}</p>
+              <p className="absolute uppercase bottom-5 right-6">{card.name}</p>
             </div>
           );
         })}

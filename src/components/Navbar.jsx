@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 flex gap-3 px-5 py-4 ite-ms-center">
       <div className="flex items-center ">
-        <div className="ml-3 ">
+        <div className="ml-3">
           <img src={logo} alt="logo" className="h-9" />
         </div>
         <ul className="hidden gap-6 cursor-pointer ml-14 lg:text-lg lg:flex">
