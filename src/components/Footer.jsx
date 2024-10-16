@@ -6,8 +6,8 @@ import facebook_icon from "../assets/facebook_icon.png";
 
 const Footer = () => {
   return (
-    <div>
-      <div>
+    <div className="">
+      <div  className="">
         <img src={youtube_icon} alt="youtube_icon" />
         <img src={twitter_icon} alt="twitter_icon" />
         <img src={instagram_icon} alt="instagram_icon" />

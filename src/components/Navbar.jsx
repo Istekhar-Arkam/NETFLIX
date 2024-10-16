@@ -16,7 +16,7 @@ const Navbar = () => {
     setDropdownVisible(false);
   };
   return (
-    <div className="fixed flex items-center gap-3 px-5 py-4">
+    <div className="fixed top-0 flex gap-3 px-5 py-4 ite-ms-center">
       <div className="flex items-center ">
         <div className="ml-3 ">
           <img src={logo} alt="logo" className="h-9" />
