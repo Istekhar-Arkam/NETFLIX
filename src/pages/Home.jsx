@@ -49,7 +49,7 @@ const Home = () => {
         <TitleCard title={"Upcoming"} />
         <TitleCard title={"Top Pics for you"} />
       </div>
-      <div className="border-4 border-white sm:mt-10 sm:ml-12">
+      <div className=" ">
         <Footer />
       </div>
     </>
