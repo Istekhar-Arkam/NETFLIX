@@ -1,9 +1,14 @@
 import React from 'react'
-
-const login = () => {
+import logo from "../assets/logo.png"
+const Login = () => {
   return (
-    <div>login</div>
+    <div>
+      <img src={logo} alt="Logo" />
+      <div>
+        <h1>sign up</h1>
+      </div>
+    </div>
   )
 }
 
-export default login
+export default Login
