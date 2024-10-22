@@ -42,7 +42,7 @@ const Login = () => {
             <h1 className="mt-10 ml-3 text-3xl font-semibold sm:ml-24">
               Sign up
             </h1>
-            {/* <Formik
+            * <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
               onSubmit={onSubmit}
@@ -93,7 +93,7 @@ const Login = () => {
                   </button>
                 </Form>
               )}
-            </Formik> */}
+            </Formik> 
             <div className="flex justify-between">
               <div className="flex mt-3">
                 <input type="checkbox" className="ml-4 bg-blue-500" />
