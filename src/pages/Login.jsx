@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import logo from "../assets/logo.png";
-import background_banner from "../../public/background_banner.jpg";
+import background_banner from "../assets/background_banner.jpg";
 
 const Login = () => {
   const initialValues = {
@@ -39,7 +39,9 @@ const Login = () => {
         </div>
         <div className="flex items-center justify-center">
           <div className="absolute w-full max-w-lg mt-10 bg-black border-4 border-white rounded-lg opacity-75 top-20 h-4/6">
-          <h1 className="mt-10 ml-3 text-3xl font-semibold sm:ml-24">Sign up</h1>
+            <h1 className="mt-10 ml-3 text-3xl font-semibold sm:ml-24">
+              Sign up
+            </h1>
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
