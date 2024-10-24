@@ -38,25 +38,27 @@ const Login = () => {
           <img src={logo} alt="logo" />
         </div>
         <div className="flex items-center justify-center">
-          <div className="absolute w-full max-w-lg mt-10 bg-black border-4 border-white rounded-lg opacity-75 top-20 h-4/6">
-            <h1 className="mt-10 ml-3 text-3xl font-semibold sm:ml-24">
-              Sign up
+          <div className="absolute w-full max-w-lg mt-10 bg-black rounded-lg opacity-65 top-20 h-4/6">
+            <h1 className="mt-10 ml-8 text-3xl font-semibold sm:ml-24">
+              Sign Up
             </h1>
-            * <Formik
+          
+            <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
               onSubmit={onSubmit}
             >
               {() => (
-                <Form className="mt-5 text-center">
+                <Form className="mt-5 text-center ">
                   <div>
                     <label htmlFor="username" className="font-semibold"></label>
                     <Field
                       name="username"
                       type="text"
-                      className="w-full p-2 mb-5 text-lg text-black rounded opacity-100 max-w-72 sm:max-w-80 bg-slate-700"
+                      className="w-full p-2 mb-5 text-lg text-black bg-white rounded max-w-64 sm:max-w-80"
                       placeholder="Name"
                     />
+                    
                     <ErrorMessage name="username" component="div" />
                   </div>
 
@@ -65,7 +67,7 @@ const Login = () => {
                     <Field
                       name="email"
                       type="email"
-                      className="w-full p-2 mb-5 text-lg text-black border-2 border-black rounded max-w-72 sm:max-w-80"
+                      className="w-full p-2 mb-5 text-lg text-black border-2 border-black rounded max-w-64 sm:max-w-80"
                       placeholder="Email"
                     />
                     <ErrorMessage name="email" component="div" />
@@ -79,7 +81,7 @@ const Login = () => {
                     <Field
                       name="password"
                       type="password"
-                      className="w-full p-2 text-lg text-black rounded max-w-72 sm:max-w-80"
+                      className="w-full p-2 text-lg text-black rounded max-w-64 sm:max-w-80"
                       placeholder="Password"
                     />
                     <ErrorMessage name="password" component="div" />
@@ -87,19 +89,20 @@ const Login = () => {
 
                   <button
                     type="submit"
-                    className="w-full p-2 mt-5 bg-red-900 border-2 border-white rounded max-w-72 sm:max-w-80"
+                    className="w-full p-2 mt-5 bg-red-900 border-2 border-white rounded max-w-64 sm:max-w-80"
                   >
                     Sign Up
                   </button>
                 </Form>
               )}
-            </Formik> 
+            </Formik>
+          
             <div className="flex justify-between">
-              <div className="flex mt-3">
-                <input type="checkbox" className="ml-4 bg-blue-500" />
+              <div className="flex mt-3 sm:ml-16">
+                <input type="checkbox" className="ml-8 " />
                 <p className="ml-1">Remember Me</p>
               </div>
-              <p className="mt-3 mr-3">Need help ?</p>
+              <p className="mt-3 mr-6 sm:mr-24">Need help ?</p>
             </div>
           </div>
         </div>
