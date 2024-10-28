@@ -6,7 +6,7 @@ import play_icon from "../assets/play_icon.png";
 import info_icon from "../assets/info_icon.png";
 import TitleCard from "../components/TitleCard";
 import Footer from "../components/Footer";
-
+import Login from "./login"
 
 const Home = () => {
   return (
@@ -53,6 +53,7 @@ const Home = () => {
      
       <div className="">
         <Footer />
+        <Login/>
       </div>
     </>
   );
