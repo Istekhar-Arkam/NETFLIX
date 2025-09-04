@@ -3,10 +3,10 @@ import cards_data from "../assets/cards/Cards_data";
 const TitleCard = ({ title, category }) => {
   return (
     <div className="mt-4 sm:w-full">
-      <h2 className="px-2 ml-1 text-xl font-bold capitalize sm:ml-16">
+      <h2 className="px-2 ml-1 text-xl font-bold capitalize sm:ml-20 sm:my-1">
         {title ? title : "Popular on Netflix"}
       </h2>
-      <div className="py-2 sm:gap-4 sm:flex sm:flex-wrap sm:ml-16 sm:mr-10">
+      <div className="py-2 sm:gap-4 sm:flex sm:flex-wrap sm:justify-start sm:px-20">
         {cards_data.map((card, index) => {
           return (
             <div className="relative w-fit" key={index}>
