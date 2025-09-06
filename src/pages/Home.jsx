@@ -5,6 +5,7 @@ import info_icon from "../assets/info_icon.png";
 import TitleCard from "../components/TitleCard";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
 const Home = () => {
   return (
     <>
