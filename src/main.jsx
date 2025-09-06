@@ -10,13 +10,14 @@ import {
 import Layout from "./Layout.jsx";
 import Home from "./pages/home.jsx";
 import Login from "./pages/Login.jsx";
+import Signup from "./pages/Signup.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/netflix" element={<Layout />}>
       <Route path="" element={<Home />} />
       <Route path="login" element={<Login />} />
-      <Route path="signup" element={<Login />} />
+      <Route path="signup" element={<Signup />} />
     </Route>
   )
 );

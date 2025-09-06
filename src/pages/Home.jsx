@@ -3,11 +3,13 @@ import hero_title from "../assets/hero_title.png";
 import play_icon from "../assets/play_icon.png";
 import info_icon from "../assets/info_icon.png";
 import TitleCard from "../components/TitleCard";
-
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 const Home = () => {
   return (
     <>
       <div className="relative">
+        <Navbar />
         <div className="">
           <img
             src={hero_banner}
@@ -45,6 +47,7 @@ const Home = () => {
         <TitleCard title={"Upcoming"} />
         <TitleCard title={"Top Pics for you"} />
       </div>
+      <Footer />
     </>
   );
 };
