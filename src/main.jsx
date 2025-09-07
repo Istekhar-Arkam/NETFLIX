@@ -11,6 +11,7 @@ import Layout from "./Layout.jsx";
 import Home from "./pages/home.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+import Player from "./pages/Player.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="" element={<Home />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
+      <Route path="player/:id" element={<Player/>} />
     </Route>
   )
 );
