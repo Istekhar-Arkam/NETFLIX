@@ -8,13 +8,14 @@ const TitleCard = ({ title, category }) => {
     headers: {
       accept: "application/json",
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlOTczY2VjMzU2MjJiMTM4ZWFkZGFjMWFmMWFhMWMzMiIsIm5iZiI6MTc2NDI2MjA2MS42ODk5OTk4LCJzdWIiOiI2OTI4ODBhZDRiNzFkYjZmMWUzMGQzNDEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.DbCiU1ZYyI5-qZzOotn9mtJANrQZc0Gs0w8bZGLu9Ls",
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZDFkNDMwMjkyZWE3MGE3YzE0MmIzNWRmMjY2MWI1YyIsIm5iZiI6MTc2NDI2MjA2MS42ODk5OTk4LCJzdWIiOiI2OTI4ODBhZDRiNzFkYjZmMWUzMGQzNDEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.jshnxKv8z6V179kr2OLNuiwmosne8r2TPgoBRa787Fs",
     },
   };
+
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1",
-      options
+      `https://api.themoviedb.org/3/movie/${category ? category : "now_playing"}?language=en-US&page=1`,
+      options,
     )
       .then((res) => res.json())
       .then((res) => setApiData(res.results))
@@ -31,7 +32,7 @@ const TitleCard = ({ title, category }) => {
           return (
             <div className="relative w-fit" key={index}>
               <img
-                src={`https://image.tmdb.org/t/p/w500`+card.backdrop_path}
+                src={`https://image.tmdb.org/t/p/w500` + card.backdrop_path}
                 alt="movie-image"
                 // card size
                 className="px-3 pb-4 cursor-pointer w-80"
