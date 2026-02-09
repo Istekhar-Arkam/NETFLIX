@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 const TitleCard = ({ title, category }) => {
   const [apiData, setApiData] = useState([]);
 
@@ -30,7 +30,7 @@ const TitleCard = ({ title, category }) => {
       <div className="py-2 sm:gap-4 sm:flex sm:flex-wrap sm:justify-start sm:px-20">
         {apiData.map((card, index) => {
           return (
-            <div className="relative w-fit" key={index}>
+            <Link to={`/player/${card.id}`} className="relative w-fit" key={index}>
               <img
                 src={`https://image.tmdb.org/t/p/w500` + card.backdrop_path}
                 alt="movie-image"
@@ -40,7 +40,7 @@ const TitleCard = ({ title, category }) => {
               <p className="absolute uppercase bottom-5 right-6">
                 {card.original_title}
               </p>
-            </div>
+            </Link>
           );
         })}
       </div>
