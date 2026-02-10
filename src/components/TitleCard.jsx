@@ -8,10 +8,9 @@ const TitleCard = ({ title, category }) => {
     headers: {
       accept: "application/json",
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZDFkNDMwMjkyZWE3MGE3YzE0MmIzNWRmMjY2MWI1YyIsIm5iZiI6MTc2NDI2MjA2MS42ODk5OTk4LCJzdWIiOiI2OTI4ODBhZDRiNzFkYjZmMWUzMGQzNDEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.jshnxKv8z6V179kr2OLNuiwmosne8r2TPgoBRa787Fs",
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjUwNDdhOTI4ZTBjZDI4ZmU0N2M1ODY1MzE0MWIyMyIsIm5iZiI6MTc2NDI2MjA2MS42ODk5OTk4LCJzdWIiOiI2OTI4ODBhZDRiNzFkYjZmMWUzMGQzNDEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.zWOvaRl_0tMMnE9bc7LXqx4cKDGtz8nS07ztjuzc5kk",
     },
   };
-
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${category ? category : "now_playing"}?language=en-US&page=1`,
@@ -30,14 +29,18 @@ const TitleCard = ({ title, category }) => {
       <div className="py-2 sm:gap-4 sm:flex sm:flex-wrap sm:justify-start sm:px-20">
         {apiData.map((card, index) => {
           return (
-            <Link to={`/player/${card.id}`} className="relative w-fit" key={index}>
+            <Link
+              to={`/player/${card.id}`}
+              className="relative w-fit"
+              key={index}
+            >
               <img
                 src={`https://image.tmdb.org/t/p/w500` + card.backdrop_path}
                 alt="movie-image"
                 // card size
                 className="px-3 pb-4 cursor-pointer w-80"
               />
-              <p className="absolute uppercase bottom-5 right-6">
+              <p className="absolute text-white no-underline uppercase bottom-5 right-6">
                 {card.original_title}
               </p>
             </Link>

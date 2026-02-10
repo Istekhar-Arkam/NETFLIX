@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import back_arrow_icon from "../assets/back_arrow_icon.png";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
 const Player = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [apiData, setApiData] = useState({
     name: "",
     key: "",
@@ -15,10 +18,9 @@ const Player = () => {
     headers: {
       accept: "application/json",
       Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZDFkNDMwMjkyZWE3MGE3YzE0MmIzNWRmMjY2MWI1YyIsIm5iZiI6MTc2NDI2MjA2MS42ODk5OTk4LCJzdWIiOiI2OTI4ODBhZDRiNzFkYjZmMWUzMGQzNDEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.jshnxKv8z6V179kr2OLNuiwmosne8r2TPgoBRa787Fs",
+        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZjUwNDdhOTI4ZTBjZDI4ZmU0N2M1ODY1MzE0MWIyMyIsIm5iZiI6MTc2NDI2MjA2MS42ODk5OTk4LCJzdWIiOiI2OTI4ODBhZDRiNzFkYjZmMWUzMGQzNDEiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.zWOvaRl_0tMMnE9bc7LXqx4cKDGtz8nS07ztjuzc5kk",
     },
   };
-
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
@@ -35,6 +37,9 @@ const Player = () => {
           src={back_arrow_icon}
           alt=""
           className="absolute w-12 cursor-pointer top-5 left-5"
+          onClick={() => {
+            navigate(-2);
+          }}
         />
         <iframe
           src={`https://www.youtube.com/embed/${apiData.key}`}
