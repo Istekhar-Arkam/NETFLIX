@@ -10,7 +10,7 @@ const Player = () => {
     name: "",
     key: "",
     published_at: "",
-    type: "",
+    typeof: "",
   });
 
   const options = {
@@ -49,7 +49,7 @@ const Player = () => {
           className="w-50 h-40 sm:w-[90%] sm:h-[90%] rounded-lg"
         ></iframe>
         <div className="flex items-center justify-between w-[90%] text-white">
-          <p className="text-red-600"> {apiData.published_at.slice(0, 10)}</p>
+          <p className=""> {apiData.published_at.slice(0, 10)}</p>
           <p>{apiData.name}</p>
           <p>{apiData.type}</p>
         </div>

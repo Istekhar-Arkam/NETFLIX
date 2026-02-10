@@ -30,7 +30,7 @@ const TitleCard = ({ title, category }) => {
         {apiData.map((card, index) => {
           return (
             <Link
-              to={`/player/${card.id}`}
+              to={`player/${card.id}`}
               className="relative w-fit"
               key={index}
             >
