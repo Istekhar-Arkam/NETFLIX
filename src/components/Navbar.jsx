@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import logo from "../assets/logo.png";
 import search_icon from "../assets/search_icon.svg";
 import bell_icon from "../assets/bell_icon.svg";
 import profile_img from "../assets/profile_img.png";
 import caret_icon from "../assets/caret_icon.svg";
 import Dropdown from "./dropdown";
-
+import "./Navbar.css";
 const Navbar = () => {
+  const navRef = useRef();
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY >= 80) {
+        navRef.current.classList.add("nav-dark");
+      } else {
+        navRef.current.classList.remove("nav-dark");
+      }
+    });
+  }, []);
+
   const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   const handleMouseEnter = () => {
@@ -16,7 +27,10 @@ const Navbar = () => {
     setDropdownVisible(false);
   };
   return (
-    <div className="fixed top-0 flex items-center gap-3 px-5 py-4">
+    <div
+      className="fixed top-0 z-10 flex items-center w-full gap-3 px-5 py-4"
+      ref={navRef}
+    >
       <div className="flex items-center ">
         <div className="ml-3">
           <img src={logo} alt="logo" className="h-9" />

@@ -1,9 +1,23 @@
 import logo from "../assets/logo.png";
 import background_banner from "../assets/background_banner.jpg";
 import { useState } from "react";
+import { login, signup } from ".././firebase";
 
 const Login = () => {
-  const [signState, setSignState] = useState("sign up");
+  const [signState, setSignState] = useState("Sign in");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const user_auth = async (event) => {
+    event.preventDefault();
+    if (signState === "Sign In") {
+      await login(email, password);
+    } else {
+      await signup(name, email, password);
+    }
+  };
+
   return (
     <>
       <div className="relative">
@@ -22,9 +36,11 @@ const Login = () => {
                 {signState}
               </h1>
               <form>
-                {signState === "sign up" ? (
+                {signState === "Sign Up" ? (
                   <input
                     type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     placeholder="enter your name"
                     className="w-full p-3 mb-6 capitalize bg-[#343434] rounded-md opacity-100"
                   />
@@ -32,16 +48,28 @@ const Login = () => {
 
                 <input
                   type="text"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
                   placeholder="email"
                   className="w-full p-3 mb-6 capitalize bg-[#343434] rounded-md opacity-100"
                 />
                 <input
                   type="password"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
                   className="w-full p-3 mb-6 capitalize bg-[#343434] rounded-md opacity-100"
                   placeholder="password"
                 />
 
-                <button className="w-full p-2 capitalize bg-red-600 rounded-md opacity-100 hover:bg-red-500">
+                <button
+                  onClick={user_auth}
+                  type="submit"
+                  className="w-full p-2 capitalize bg-red-600 rounded-md opacity-100 hover:bg-red-500"
+                >
                   {signState}
                 </button>
                 <div className="flex justify-between sm:mt-4 ">
@@ -55,7 +83,7 @@ const Login = () => {
                 </div>
               </form>
               <div className="">
-                {signState === "sign in" ? (
+                {signState === "Sign In" ? (
                   <p className="pb-6 text-center text-gray-500 capitalize cursor-pointer sm:pb-8">
                     new to netflix?{" "}
                     <span
