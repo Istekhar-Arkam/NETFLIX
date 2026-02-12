@@ -4,7 +4,7 @@ import { useState } from "react";
 import { login, signup } from ".././firebase";
 
 const Login = () => {
-  const [signState, setSignState] = useState("Sign in");
+  const [signState, setSignState] = useState("Sign Up");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -53,7 +53,7 @@ const Login = () => {
                     setEmail(e.target.value);
                   }}
                   placeholder="email"
-                  className="w-full p-3 mb-6 capitalize bg-[#343434] rounded-md opacity-100"
+                  className="w-full p-3 mb-6  bg-[#343434] rounded-md opacity-100"
                 />
                 <input
                   type="password"
@@ -61,7 +61,7 @@ const Login = () => {
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
-                  className="w-full p-3 mb-6 capitalize bg-[#343434] rounded-md opacity-100"
+                  className="w-full p-3 mb-6 bg-[#343434] rounded-md opacity-100"
                   placeholder="password"
                 />
 

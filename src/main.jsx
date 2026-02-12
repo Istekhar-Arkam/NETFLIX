@@ -12,6 +12,8 @@ import Home from "./pages/home.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import Player from "./pages/Player.jsx";
+import app from "./app.jsx";
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(

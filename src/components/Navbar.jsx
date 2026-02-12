@@ -6,7 +6,10 @@ import profile_img from "../assets/profile_img.png";
 import caret_icon from "../assets/caret_icon.svg";
 import Dropdown from "./dropdown";
 import "./Navbar.css";
+import Drop from "./Drop";
 const Navbar = () => {
+   const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null);
   const navRef = useRef();
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -18,14 +21,15 @@ const Navbar = () => {
     });
   }, []);
 
-  const [isDropdownVisible, setDropdownVisible] = useState(false);
-
-  const handleMouseEnter = () => {
-    setDropdownVisible(true);
-  };
-  const handleMouseLeave = () => {
-    setDropdownVisible(false);
-  };
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   return (
     <div
       className="fixed top-0 z-10 flex items-center w-full gap-3 px-5 py-4"
@@ -58,11 +62,11 @@ const Navbar = () => {
         <img
           src={caret_icon}
           alt="caret_icon"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+           onClick={() => setOpen(!open)}
         />
-        {isDropdownVisible && <Dropdown />}
+         {open && <Dropdown />}
       </div>
+      <Drop/>
     </div>
   );
 };
